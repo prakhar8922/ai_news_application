@@ -1,13 +1,24 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* The height: 100vh; rule sets the height of these elements to 100% of the viewport height (vh). This ensures that they take up the entire height of the visible screen. */
+#root, html, body {
+    height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Apply styles to the body element. */
+body {
+    /* Remove default margin to prevent unwanted spacing around the body. */
+    margin: 0;
+    /* Set the background color of the body to 'whitesmoke'. */
+    background-color: whitesmoke;
+}
+
+/* Apply styles to all elements within the document. */
+* {
+    /* Use the 'border-box' box-sizing model to include padding and border in element's total width and height. */
+    box-sizing: border-box;
+}
+
+/* Apply styles to the html element. */
+html {
+    /* Enable smooth scrolling behavior for the entire document. */
+    scroll-behavior: smooth;
 }

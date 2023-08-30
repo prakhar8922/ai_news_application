@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from "react";//This line imports the React module from the react package. This is necessary because you're using JSX, and JSX gets transpiled into React function calls.
 
-export default App;
+// Declare a functional component named 'App'.
+const App = () => {
+    // The 'return' statement marks the start of the component's JSX rendering.
+    return (
+        // JSX allows you to write HTML-like syntax within JavaScript.
+        // This is the root <div> element of your component.
+        <div>
+            {/* Inside the <div>, there's an <h1> element with some text content. */}
+            <h1>Alan news AI Application</h1>
+        </div>
+    ); // End of the JSX rendering.
+}; // End of the 'App' component.
+
+export default App; //This line exports the App component as the default export of the module. This allows other parts of your application to import and use the App component.
