@@ -1,17 +1,37 @@
+import React, { useEffect } from "react";
+// Import the 'alanBtn' function from the "@alan-ai/alan-sdk-web" package.
+import alanBtn from "@alan-ai/alan-sdk-web";
+// Define the API key for Alan AI. This key is used to authenticate and interact with the Alan AI service.
+const alanKey =
+  "a1dd3ceefd30ba292496f1daf1bdbd482e956eca572e1d8b807a3e2338fdd0dc/stage";
 
-import React from "react";//This line imports the React module from the react package. This is necessary because you're using JSX, and JSX gets transpiled into React function calls.
-
-// Declare a functional component named 'App'.
 const App = () => {
-    // The 'return' statement marks the start of the component's JSX rendering.
-    return (
-        // JSX allows you to write HTML-like syntax within JavaScript.
-        // This is the root <div> element of your component.
-        <div>
-            {/* Inside the <div>, there's an <h1> element with some text content. */}
-            <h1>Alan news AI Application</h1>
-        </div>
-    ); // End of the JSX rendering.
-}; // End of the 'App' component.
+  // The useEffect hook is a fundamental part of React's hooks API, and it's used to manage side effects in functional components. Side effects in React refer to actions that are performed in response to changes in the component's state, props, or the overall environment. These effects might include things like data fetching, DOM manipulation, subscriptions, and more.
 
-export default App; //This line exports the App component as the default export of the module. This allows other parts of your application to import and use the App component.
+  // useEffect takes two arguments:
+
+  // The first argument is a function that contains the code to be executed as the side effect.
+  // The second argument is an optional dependency array that specifies when the effect should run. If this array is not provided, the effect will run after every render. If it's an empty array ([]), the effect will only run after the initial render.
+  useEffect(() => {
+    // Initialize the Alan AI voice assistant using the 'alanBtn' function.
+    alanBtn({
+      // Provide the Alan AI API key.
+      key: alanKey,
+      // Set up a callback function to handle commands received from Alan AI.
+      onCommand: ({ command }) => {
+        // Check if the received command is "testcommand".
+        if (command === "testcommand") {
+          // If the command is "testcommand", show an alert.
+          alert("This code was executed");
+        }
+      },
+    });
+  }, []); // The empty dependency array [] means this effect runs only once after the initial render.
+  return (
+    <div>
+      <h1>Alan news AI Application</h1>
+    </div>
+  );
+};
+
+export default App;
